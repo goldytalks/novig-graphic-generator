@@ -118,19 +118,6 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                 position: 'relative',
               }}
             >
-              {/* Sport Icon */}
-              {data.sport && (
-                <div
-                  style={{
-                    fontSize: `${fontSize.sportIcon}px`,
-                    lineHeight: 1,
-                    flexShrink: 0,
-                  }}
-                >
-                  {getSportEmoji(data.sport)}
-                </div>
-              )}
-
               {/* Player Info */}
               <div style={{ flex: 1 }}>
                 {data.playerName && (
@@ -317,7 +304,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                     fontFamily: 'PP Monument Extended, system-ui, sans-serif',
                   }}
                 >
-                  {data.sport && `${getSportEmoji(data.sport)} `}{data.category}
+                  {data.category}
                 </div>
               )}
 
