@@ -10,13 +10,13 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
     const scale = width / 1080;
 
     const fontSize = {
-      question: isSquare ? 52 * scale : 42 * scale,
-      playerName: isSquare ? 32 * scale : 28 * scale,
-      playerLine: isSquare ? 24 * scale : 20 * scale,
-      option: isSquare ? 96 * scale : 72 * scale,
-      odds: isSquare ? 32 * scale : 26 * scale,
-      footer: isSquare ? 18 * scale : 16 * scale,
-      sportIcon: isSquare ? 192 * scale : 160 * scale, // 4x bigger!
+      question: isSquare ? 52 * scale : 36 * scale,
+      playerName: isSquare ? 32 * scale : 24 * scale,
+      playerLine: isSquare ? 24 * scale : 18 * scale,
+      option: isSquare ? 96 * scale : 64 * scale,
+      odds: isSquare ? 32 * scale : 24 * scale,
+      footer: isSquare ? 18 * scale : 14 * scale,
+      sportIcon: isSquare ? 120 * scale : 80 * scale, // Corner icon
     };
 
     return (
@@ -36,48 +36,20 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           borderRadius: '24px',
         }}
       >
-        {/* CORNER: Large Sport Icon + Novig Logo */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '24px',
-            right: '24px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '12px',
-          }}
-        >
-          {data.sport && (
-            <div
-              style={{
-                fontSize: `${fontSize.sportIcon}px`,
-                lineHeight: 1,
-              }}
-            >
-              {getSportEmoji(data.sport)}
-            </div>
-          )}
-          <img
-            src={novigLogoWhite}
-            alt="Novig"
+        {/* CORNER: Sport Icon Only */}
+        {data.sport && (
+          <div
             style={{
-              height: `${isSquare ? 28 : 24}px`,
-              width: 'auto',
-              filter: 'brightness(1.1)',
+              position: 'absolute',
+              top: '32px',
+              right: '32px',
+              fontSize: `${fontSize.sportIcon}px`,
+              lineHeight: 1,
             }}
-          />
-        </div>
-
-        {/* Divider */}
-        <div
-          style={{
-            width: '100%',
-            height: '2px',
-            background: 'linear-gradient(90deg, transparent, #7ACFFF, transparent)',
-            marginBottom: '32px',
-          }}
-        />
+          >
+            {getSportEmoji(data.sport)}
+          </div>
+        )}
 
         {/* Market Question */}
         <div
