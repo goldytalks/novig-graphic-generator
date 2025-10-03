@@ -42,26 +42,26 @@ function App() {
           </p>
         </div>
 
-        {/* Main Layout - Side by side */}
-        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-6 items-start">
-          {/* Controls Section - Left Side */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-gray-200">
-              <h2 className="text-2xl font-black text-gray-900 mb-6 uppercase tracking-tight">
+        {/* Main Layout - Side by side: Controls LEFT, Preview RIGHT */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Controls Section - LEFT SIDE (BIGGER) */}
+          <div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200">
+              <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-tight">
                 ⚙️ Controls
               </h2>
 
               {/* Market Form */}
               <MarketForm data={marketData} onDataChange={handleDataChange} />
 
-              <div className="mt-6">
+              <div className="mt-8">
                 <DownloadButton elementRef={previewRef} />
               </div>
             </div>
           </div>
 
-          {/* Preview Section - Right Side */}
-          <div className="order-1 lg:order-2">
+          {/* Preview Section - RIGHT SIDE */}
+          <div>
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl p-8 border-2 border-sky-blue sticky top-8">
               <div className="mb-6 text-center">
                 <span className="inline-block bg-sky-blue text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">

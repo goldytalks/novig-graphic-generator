@@ -23,18 +23,18 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
 
   return (
     <div className="space-y-6">
-      {/* Template Selector */}
-      <div className="space-y-2">
-        <label className="block text-sm font-semibold text-gray-900">
+      {/* Template Selector - SIDE BY SIDE */}
+      <div className="space-y-3">
+        <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
           Template Style
         </label>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <button
             onClick={() => onDataChange({ template: 'bold' })}
-            className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all border-2 ${
+            className={`px-6 py-4 rounded-xl font-bold text-base transition-all border-2 ${
               data.template === 'bold'
-                ? 'bg-sky-blue border-sky-blue text-white shadow-md'
-                : 'bg-white border-gray-200 text-gray-700 hover:border-sky-blue'
+                ? 'bg-sky-blue border-sky-blue text-white shadow-lg scale-105'
+                : 'bg-gray-50 border-gray-300 text-gray-700 hover:border-sky-blue hover:bg-white'
             }`}
             type="button"
           >
@@ -42,10 +42,10 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
           </button>
           <button
             onClick={() => onDataChange({ template: 'minimal' })}
-            className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all border-2 ${
+            className={`px-6 py-4 rounded-xl font-bold text-base transition-all border-2 ${
               data.template === 'minimal'
-                ? 'bg-sky-blue border-sky-blue text-white shadow-md'
-                : 'bg-white border-gray-200 text-gray-700 hover:border-sky-blue'
+                ? 'bg-sky-blue border-sky-blue text-white shadow-lg scale-105'
+                : 'bg-gray-50 border-gray-300 text-gray-700 hover:border-sky-blue hover:bg-white'
             }`}
             type="button"
           >
@@ -55,8 +55,8 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
       </div>
 
       {/* Market Question */}
-      <div className="space-y-2">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide">
+      <div className="space-y-3">
+        <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
           Market Question
         </label>
         <textarea
@@ -65,18 +65,18 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
           placeholder="Will Aaron Judge hit 3 home runs this week?"
           maxLength={maxLength}
           rows={3}
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 resize-none text-sm font-medium text-gray-900 placeholder:text-gray-400"
+          className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 resize-none text-base font-semibold text-gray-900 placeholder:text-gray-400"
         />
-        <div className="text-xs font-semibold text-gray-400 text-right">
+        <div className="text-sm font-bold text-gray-400 text-right">
           {questionLength}/{maxLength}
         </div>
       </div>
 
-      {/* Options Grid */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Options Grid - SIDE BY SIDE */}
+      <div className="grid grid-cols-2 gap-4">
         {/* Option 1 */}
-        <div className="space-y-2">
-          <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide">
+        <div className="space-y-3">
+          <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
             Option 1
           </label>
           <input
@@ -84,20 +84,20 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
             value={data.option1}
             onChange={(e) => onDataChange({ option1: e.target.value })}
             placeholder="YES"
-            className="w-full px-3 py-2.5 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400"
+            className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400"
           />
           <input
             type="text"
             value={data.option1Odds}
             onChange={(e) => onDataChange({ option1Odds: e.target.value })}
             placeholder="+250"
-            className="w-full px-3 py-2.5 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400"
+            className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400"
           />
         </div>
 
         {/* Option 2 */}
-        <div className="space-y-2">
-          <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide">
+        <div className="space-y-3">
+          <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
             Option 2
           </label>
           <input
@@ -105,27 +105,27 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
             value={data.option2}
             onChange={(e) => onDataChange({ option2: e.target.value })}
             placeholder="NO"
-            className="w-full px-3 py-2.5 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400"
+            className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400"
           />
           <input
             type="text"
             value={data.option2Odds}
             onChange={(e) => onDataChange({ option2Odds: e.target.value })}
             placeholder="-300"
-            className="w-full px-3 py-2.5 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400"
+            className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400"
           />
         </div>
       </div>
 
       {/* Sport Selection */}
-      <div className="space-y-2">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide">
+      <div className="space-y-3">
+        <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
           Sport
         </label>
         <select
           value={data.sport || 'OTHER'}
           onChange={(e) => onDataChange({ sport: e.target.value as any })}
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 cursor-pointer"
+          className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 cursor-pointer"
         >
           <option value="MLB">⚾ MLB</option>
           <option value="NBA">🏀 NBA</option>
@@ -138,21 +138,21 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
       </div>
 
       {/* Player Section with Toggle */}
-      <div className="space-y-3 p-4 bg-gray-100 rounded-xl border border-gray-200">
+      <div className="space-y-4 p-5 bg-gray-100 rounded-xl border-2 border-gray-200">
         <div className="flex items-center justify-between">
-          <label className="text-xs font-bold text-gray-700 uppercase tracking-wide">
+          <label className="text-sm font-black text-gray-900 uppercase tracking-wide">
             Player Details
           </label>
           <button
             onClick={() => onDataChange({ showPlayerName: !data.showPlayerName })}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${
               data.showPlayerName
-                ? 'bg-sky-blue text-white shadow-sm'
-                : 'bg-white border-2 border-gray-300 text-gray-600'
+                ? 'bg-sky-blue text-white shadow-lg scale-105'
+                : 'bg-white border-2 border-gray-300 text-gray-700'
             }`}
             type="button"
           >
-            {data.showPlayerName ? <Eye size={14} /> : <EyeOff size={14} />}
+            {data.showPlayerName ? <Eye size={16} /> : <EyeOff size={16} />}
             {data.showPlayerName ? 'Show' : 'Hide'}
           </button>
         </div>
@@ -163,7 +163,7 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
           onChange={(e) => onDataChange({ playerName: e.target.value })}
           placeholder="Player Name"
           disabled={!data.showPlayerName}
-          className="w-full px-3 py-2.5 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200"
+          className="w-full px-5 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200"
         />
 
         <input
@@ -172,7 +172,7 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
           onChange={(e) => onDataChange({ playerLine: e.target.value })}
           placeholder="e.g., Judge o/u 2.5 HRs"
           disabled={!data.showPlayerName}
-          className="w-full px-3 py-2.5 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200"
+          className="w-full px-5 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200"
         />
 
         <div className="flex items-center gap-3">
@@ -224,8 +224,8 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
       </div>
 
       {/* Category */}
-      <div className="space-y-2">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide">
+      <div className="space-y-3">
+        <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
           Category
         </label>
         <input
@@ -233,26 +233,26 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
           value={data.category || ''}
           onChange={(e) => onDataChange({ category: e.target.value })}
           placeholder="MLB, NBA, NFL..."
-          className="w-full px-3 py-2.5 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400"
+          className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-300 rounded-xl focus:outline-none focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400"
         />
       </div>
 
       {/* Volume with Toggle */}
-      <div className="space-y-3 p-4 bg-gray-100 rounded-xl border border-gray-200">
+      <div className="space-y-4 p-5 bg-gray-100 rounded-xl border-2 border-gray-200">
         <div className="flex items-center justify-between">
-          <label className="text-xs font-bold text-gray-700 uppercase tracking-wide">
+          <label className="text-sm font-black text-gray-900 uppercase tracking-wide">
             Volume Traded
           </label>
           <button
             onClick={() => onDataChange({ showVolume: !data.showVolume })}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${
               data.showVolume
-                ? 'bg-sky-blue text-white shadow-sm'
-                : 'bg-white border-2 border-gray-300 text-gray-600'
+                ? 'bg-sky-blue text-white shadow-lg scale-105'
+                : 'bg-white border-2 border-gray-300 text-gray-700'
             }`}
             type="button"
           >
-            {data.showVolume ? <Eye size={14} /> : <EyeOff size={14} />}
+            {data.showVolume ? <Eye size={16} /> : <EyeOff size={16} />}
             {data.showVolume ? 'Show' : 'Hide'}
           </button>
         </div>
@@ -263,39 +263,39 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
           onChange={(e) => onDataChange({ volumeTraded: e.target.value })}
           placeholder="1,234,567.89"
           disabled={!data.showVolume}
-          className="w-full px-3 py-2.5 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-sm font-bold text-gray-900 placeholder:text-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200"
+          className="w-full px-5 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20 text-base font-bold text-gray-900 placeholder:text-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200"
         />
       </div>
 
-      {/* Aspect Ratio */}
-      <div className="space-y-2">
-        <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide">
+      {/* Aspect Ratio - SIDE BY SIDE */}
+      <div className="space-y-3">
+        <label className="block text-sm font-black text-gray-900 uppercase tracking-wide">
           Format
         </label>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <button
             onClick={() => onDataChange({ aspectRatio: '1:1' })}
-            className={`px-4 py-3 rounded-xl font-bold text-sm transition-all border-2 ${
+            className={`px-6 py-4 rounded-xl font-bold text-base transition-all border-2 ${
               data.aspectRatio === '1:1'
-                ? 'bg-sky-blue border-sky-blue text-white shadow-md'
+                ? 'bg-sky-blue border-sky-blue text-white shadow-lg scale-105'
                 : 'bg-gray-50 border-gray-300 text-gray-700 hover:border-sky-blue hover:bg-white'
             }`}
             type="button"
           >
             1:1 Square
-            <div className="text-xs opacity-75 mt-0.5 font-medium">Instagram</div>
+            <div className="text-sm opacity-75 mt-1 font-semibold">Instagram</div>
           </button>
           <button
             onClick={() => onDataChange({ aspectRatio: '1.91:1' })}
-            className={`px-4 py-3 rounded-xl font-bold text-sm transition-all border-2 ${
+            className={`px-6 py-4 rounded-xl font-bold text-base transition-all border-2 ${
               data.aspectRatio === '1.91:1'
-                ? 'bg-sky-blue border-sky-blue text-white shadow-md'
+                ? 'bg-sky-blue border-sky-blue text-white shadow-lg scale-105'
                 : 'bg-gray-50 border-gray-300 text-gray-700 hover:border-sky-blue hover:bg-white'
             }`}
             type="button"
           >
             1.91:1 Wide
-            <div className="text-xs opacity-75 mt-0.5 font-medium">Twitter</div>
+            <div className="text-sm opacity-75 mt-1 font-semibold">Twitter</div>
           </button>
         </div>
       </div>
