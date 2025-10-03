@@ -162,6 +162,25 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           </>
         )}
 
+        {/* Novig Logo - Centered between ticket and options */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: isSquare ? '32px' : '24px',
+            marginTop: isSquare ? '0' : '16px',
+          }}
+        >
+          <img
+            src={novigLogoWhite}
+            alt="Novig"
+            style={{
+              height: `${isSquare ? 36 : 28}px`,
+              width: 'auto',
+            }}
+          />
+        </div>
+
         {/* YES/NO Split Section */}
         <div
           style={{

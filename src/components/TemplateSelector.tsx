@@ -12,7 +12,8 @@ export default function TemplateSelector({
   const templates: { value: TemplateType; label: string }[] = [
     { value: 'bold', label: 'Bold' },
     { value: 'minimal', label: 'Minimal' },
-    { value: 'gradient', label: 'Gradient' },
+    // Gradient template hidden for now
+    // { value: 'gradient', label: 'Gradient' },
   ];
 
   return (
@@ -20,7 +21,7 @@ export default function TemplateSelector({
       <label className="block text-sm font-semibold text-gray-900">
         Template Style
       </label>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 gap-2">
         {templates.map((template) => (
           <button
             key={template.value}
