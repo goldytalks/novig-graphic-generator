@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import type { MarketData } from './types/market';
-import TemplateSelector from './components/TemplateSelector';
 import MarketForm from './components/MarketForm';
 import GraphicPreview from './components/GraphicPreview';
 import DownloadButton from './components/DownloadButton';

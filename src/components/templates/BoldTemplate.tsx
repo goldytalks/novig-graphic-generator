@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 import type { TemplateProps } from '../../types/market';
 import { formatVolume } from '../../utils/formatOdds';
-import { getSportEmoji } from '../../utils/sportIcons';
 import novigLogoWhite from '../../assets/novig-logo-white.svg';
 
 const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
