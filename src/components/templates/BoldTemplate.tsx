@@ -36,20 +36,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           borderRadius: '24px',
         }}
       >
-        {/* CORNER: Sport Icon Only */}
-        {data.sport && (
-          <div
-            style={{
-              position: 'absolute',
-              top: '32px',
-              right: '32px',
-              fontSize: `${fontSize.sportIcon}px`,
-              lineHeight: 1,
-            }}
-          >
-            {getSportEmoji(data.sport)}
-          </div>
-        )}
+        {/* Sport Icon removed - cleaner design */}
 
         {/* Market Question */}
         <div
@@ -162,20 +149,20 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           </>
         )}
 
-        {/* Novig Logo - Centered between ticket and options */}
+        {/* Novig Logo - BIG and Centered */}
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: isSquare ? '32px' : '24px',
-            marginTop: isSquare ? '0' : '16px',
+            marginBottom: isSquare ? '48px' : '32px',
+            marginTop: isSquare ? '16px' : '24px',
           }}
         >
           <img
             src={novigLogoWhite}
             alt="Novig"
             style={{
-              height: `${isSquare ? 36 : 28}px`,
+              height: `${isSquare ? 48 : 40}px`,
               width: 'auto',
             }}
           />

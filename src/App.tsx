@@ -43,48 +43,36 @@ function App() {
           </p>
         </div>
 
-        {/* Main Layout - Preview First, Form Below on mobile, Side by side on desktop */}
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
-          {/* Preview Section - Takes up more space */}
-          <div className="xl:col-span-8 order-1">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <div className="flex flex-col items-center">
-                {/* Preview */}
-                <div className="mb-6 w-full flex justify-center">
-                  <div className="relative">
-                    <GraphicPreview data={marketData} ref={previewRef} />
-                    {/* Decorative badge */}
-                    <div className="absolute -top-3 -right-3 bg-sky-blue text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      LIVE PREVIEW
-                    </div>
-                  </div>
-                </div>
+        {/* Main Layout - Side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Controls Section - Left Side */}
+          <div className="order-2 lg:order-1">
+            <div className="bg-white rounded-3xl shadow-2xl p-8 border-4 border-sky-blue">
+              <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-tight">
+                ⚙️ Controls
+              </h2>
 
-                {/* Download Button */}
+              {/* Market Form */}
+              <MarketForm data={marketData} onDataChange={handleDataChange} />
+
+              <div className="mt-8">
                 <DownloadButton elementRef={previewRef} />
               </div>
             </div>
           </div>
 
-          {/* Controls Section - Compact sidebar */}
-          <div className="xl:col-span-4 order-2">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Settings
-              </h2>
+          {/* Preview Section - Right Side */}
+          <div className="order-1 lg:order-2">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-2xl p-8 border-4 border-sky-blue sticky top-8">
+              <div className="mb-4 text-center">
+                <span className="inline-block bg-sky-blue text-white px-4 py-2 rounded-full text-sm font-bold uppercase">
+                  Live Preview
+                </span>
+              </div>
 
-              {/* Template Selector */}
-              <TemplateSelector
-                selectedTemplate={marketData.template}
-                onTemplateChange={(template) =>
-                  handleDataChange({ template })
-                }
-              />
-
-              <div className="my-6 border-t-2 border-gray-100"></div>
-
-              {/* Market Form */}
-              <MarketForm data={marketData} onDataChange={handleDataChange} />
+              <div className="flex justify-center">
+                <GraphicPreview data={marketData} ref={previewRef} />
+              </div>
             </div>
           </div>
         </div>
