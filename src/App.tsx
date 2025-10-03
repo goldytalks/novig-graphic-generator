@@ -43,10 +43,10 @@ function App() {
         </div>
 
         {/* Main Layout - Side by side: Controls LEFT, Preview RIGHT */}
-        <div className="grid grid-cols-2 gap-6 items-start max-w-[1800px] mx-auto">
-          {/* Controls Section - LEFT SIDE (BIGGER) */}
+        <div className="grid grid-cols-2 gap-12 items-start max-w-[1800px] mx-auto">
+          {/* Controls Section - LEFT SIDE */}
           <div>
-            <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200">
+            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
               <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-tight">
                 ⚙️ Controls
               </h2>
@@ -62,13 +62,15 @@ function App() {
 
           {/* Preview Section - RIGHT SIDE */}
           <div>
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl p-8 border-2 border-sky-blue sticky top-8">
-              <div className="mb-6 text-center">
-                <span className="inline-block bg-sky-blue text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
-                  Live Preview
-                </span>
-              </div>
+            {/* Live Preview Badge - Separate */}
+            <div className="mb-4 text-center">
+              <span className="inline-block bg-sky-blue text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg">
+                Live Preview
+              </span>
+            </div>
 
+            {/* Preview Box - Floating */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl p-8 border-2 border-sky-blue">
               <div className="flex justify-center">
                 <GraphicPreview data={marketData} ref={previewRef} />
               </div>
