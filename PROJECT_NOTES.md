@@ -2,7 +2,8 @@
 
 > Last Updated: October 3, 2025
 > Status: ✅ LIVE IN PRODUCTION - Deployed and Running
-> Version: 1.4.0 - Live on Vercel + GitHub
+> Version: 1.5.0 - Major UX Overhaul Complete
+> Live URL: https://noviggraphicgenerator-6stti1q76-goldyverse.vercel.app
 
 ---
 
@@ -44,6 +45,94 @@ The Novig Graphic Generator is a production-ready web application designed for t
 ---
 
 ## 📝 RECENT CHANGES
+
+### October 3, 2025 - Version 1.5.0 🎨 MAJOR UX OVERHAUL ✅ COMPLETE
+**Session Summary: Complete Layout and Input Redesign**
+
+This was a major redesign session focused on creating a professional, intuitive two-column layout with bigger, easier-to-use inputs.
+
+#### Layout Changes
+- ✅ **True 50/50 Split Layout**: Changed from flexible layout to `grid-cols-2` for perfect 50/50 split
+- ✅ **Full-Height Design**: Implemented `h-screen flex flex-col` structure with fixed header
+- ✅ **Left Column (Controls)**:
+  - 50% width, scrollable (`overflow-y-auto`)
+  - Gray background (`bg-gray-50`) with border-right
+  - Contains all form inputs and controls
+- ✅ **Right Column (Preview)**:
+  - 50% width, white background
+  - Centered preview with `flex items-center justify-start`
+  - Preview scaled to 60% to fit properly (`transform: scale(0.6)`)
+- ✅ **Removed Footer**: Eliminated "Built for Novig..." text
+- ✅ **Responsive at All Zoom Levels**: Works at 50%, 100%, 150%, 200% zoom
+
+#### Input Field Improvements
+- ✅ **Larger Input Sizes**: Increased padding from `px-3 py-2.5` to `px-5 py-4`
+- ✅ **Bigger Font Sizes**: Changed from `text-sm` (14px) to `text-base` (16px)
+- ✅ **Bold Labels**: All labels now `font-black text-sm uppercase tracking-wide`
+- ✅ **Better Focus States**: Added `focus:bg-white focus:border-sky-blue focus:ring-2 focus:ring-sky-blue/20`
+- ✅ **Side-by-Side Layout**: Template selector, options, and format buttons all displayed side-by-side
+- ✅ **Consistent Spacing**: All sections use `space-y-3` or `space-y-4` for uniform gaps
+
+#### Template Changes
+- ✅ **Centered Player Details Box**: Changed to `flexDirection: 'column'` with `alignItems: 'center'`
+- ✅ **Auto-Width Player Box**: Set `maxWidth: '80%'` with `margin: '0 auto'`
+- ✅ **Bigger Novig Logo**: Increased from 48px to 56px (square) and 32px to 40px (wide)
+- ✅ **Better Logo Position**: Centered between player ticket and YES/NO options
+- ✅ **Removed Sport Icon**: Eliminated corner sport emoji for cleaner design
+- ✅ **Fixed Wide Format**: Adjusted all font sizes and spacing for 1.91:1 aspect ratio
+
+#### Technical Implementation
+```jsx
+// Layout Structure
+<div className="h-screen flex flex-col">
+  {/* Fixed Header */}
+  <div className="py-6 bg-white border-b border-gray-200">
+    <h1>Novig Graphic Generator</h1>
+  </div>
+
+  {/* Two-Column Grid */}
+  <div className="flex-1 grid grid-cols-2 overflow-hidden">
+    {/* Left: Controls */}
+    <div className="overflow-y-auto bg-gray-50 border-r p-6">
+      {/* All form inputs */}
+    </div>
+
+    {/* Right: Preview */}
+    <div className="overflow-auto bg-white flex flex-col items-center p-8">
+      <div style={{ transform: 'scale(0.6)' }}>
+        <GraphicPreview />
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+#### Git Commits from This Session
+1. `Fix: Restore template selector + wide format layout` - Added template selector back, fixed wide format spacing
+2. `UX Overhaul: Centered player box + bigger logo + intuitive inputs` - Redesigned all inputs and template layout
+3. `MAJOR UX UPGRADE: Bigger inputs side-by-side + 50/50 layout` - Increased input sizes, side-by-side grids
+4. `CRITICAL FIX: Force side-by-side layout (no responsive breakpoint)` - Fixed to always show two columns
+5. `Polish: More space + floating preview badge` - Added gap-12, separated preview badge
+6. `Perfect Two-Column Layout: Fixed 400px left + flex right` - Attempted fixed-width layout
+7. `FINAL LAYOUT FIX: True 50/50 split + remove footer + fix zoom` - Implemented final 50/50 grid
+8. `Fix: Scale preview to fit in right column (60% scale)` - Added transform scale to prevent overflow
+
+#### Issues Resolved
+- ❌ Controls and preview were stacking vertically instead of side-by-side → ✅ Fixed with `grid-cols-2`
+- ❌ Preview overflowing and overlapping controls → ✅ Fixed with `transform: scale(0.6)`
+- ❌ Layout breaking at different zoom levels → ✅ Fixed with percentage-based grid
+- ❌ Inputs too small and hard to fill out → ✅ Increased padding and font sizes
+- ❌ Footer cluttering the design → ✅ Removed completely
+- ❌ Player box not centered → ✅ Changed to flexbox column with center alignment
+- ❌ Wide format cutting off text → ✅ Reduced all font sizes for 1.91:1 aspect ratio
+
+#### Current Status
+- ✅ Layout works at all zoom levels (50%-200%)
+- ✅ Controls on left, preview on right (true 50/50 split)
+- ✅ All inputs larger and easier to use
+- ✅ Preview properly scaled and contained
+- ✅ Clean, professional appearance
+- ✅ Production deployed and working
 
 ### October 1, 2025 - Version 1.3.0 🎨 COLOR CORRECTION ✅ COMPLETE
 - ✅ **CRITICAL FIX: Replaced purple with Ice Rink Blue (#D9FCFE)** throughout entire app
@@ -414,6 +503,22 @@ Light Text:          #FFFFFF
 ---
 
 ## 📈 VERSION HISTORY
+
+### v1.5.0 - October 3, 2025
+- **MAJOR UX OVERHAUL**: Complete layout redesign session
+- **TRUE 50/50 LAYOUT**: Grid-cols-2 with perfect split
+- **BIGGER INPUTS**: px-5 py-4, text-base fonts
+- **SIDE-BY-SIDE CONTROLS**: Template, options, format all side-by-side
+- **CENTERED PLAYER BOX**: Auto-width with center alignment
+- **BIGGER LOGO**: 56px square / 40px wide, properly positioned
+- **REMOVED SPORT ICON**: Cleaner design without corner emoji
+- **FIXED WIDE FORMAT**: Proper font sizes for 1.91:1
+- **SCALED PREVIEW**: 60% scale to fit in right column
+- **REMOVED FOOTER**: Eliminated "Built for Novig..." text
+- **FULL-HEIGHT LAYOUT**: h-screen with flex-col structure
+- **ALL ZOOM LEVELS**: Works at 50%, 100%, 150%, 200%
+- Multiple deployment cycles with iterative fixes
+- 8 commits total for this session
 
 ### v1.4.0 - October 3, 2025
 - **PRODUCTION DEPLOYMENT**: Successfully deployed to Vercel
