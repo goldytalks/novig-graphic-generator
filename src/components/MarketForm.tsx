@@ -23,6 +23,37 @@ export default function MarketForm({ data, onDataChange }: MarketFormProps) {
 
   return (
     <div className="space-y-6">
+      {/* Template Selector */}
+      <div className="space-y-2">
+        <label className="block text-sm font-semibold text-gray-900">
+          Template Style
+        </label>
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            onClick={() => onDataChange({ template: 'bold' })}
+            className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all border-2 ${
+              data.template === 'bold'
+                ? 'bg-sky-blue border-sky-blue text-white shadow-md'
+                : 'bg-white border-gray-200 text-gray-700 hover:border-sky-blue'
+            }`}
+            type="button"
+          >
+            Bold
+          </button>
+          <button
+            onClick={() => onDataChange({ template: 'minimal' })}
+            className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all border-2 ${
+              data.template === 'minimal'
+                ? 'bg-sky-blue border-sky-blue text-white shadow-md'
+                : 'bg-white border-gray-200 text-gray-700 hover:border-sky-blue'
+            }`}
+            type="button"
+          >
+            Minimal
+          </button>
+        </div>
+      </div>
+
       {/* Market Question */}
       <div className="space-y-2">
         <label className="block text-sm font-semibold text-gray-900">

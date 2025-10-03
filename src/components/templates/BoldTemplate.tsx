@@ -9,13 +9,25 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
     const scale = width / 1080;
 
     const fontSize = {
-      question: isSquare ? 52 * scale : 36 * scale,
-      playerName: isSquare ? 32 * scale : 24 * scale,
-      playerLine: isSquare ? 24 * scale : 18 * scale,
-      option: isSquare ? 96 * scale : 64 * scale,
-      odds: isSquare ? 32 * scale : 24 * scale,
-      footer: isSquare ? 18 * scale : 14 * scale,
+      question: isSquare ? 52 * scale : 32 * scale,
+      playerName: isSquare ? 32 * scale : 22 * scale,
+      playerLine: isSquare ? 24 * scale : 16 * scale,
+      option: isSquare ? 96 * scale : 56 * scale,
+      odds: isSquare ? 32 * scale : 20 * scale,
+      footer: isSquare ? 18 * scale : 12 * scale,
       sportIcon: isSquare ? 120 * scale : 80 * scale, // Corner icon
+    };
+
+    const spacing = {
+      padding: isSquare ? '48px' : '32px',
+      questionMargin: isSquare ? '32px' : '20px',
+      ticketMargin: isSquare ? '32px' : '20px',
+      logoMarginBottom: isSquare ? '48px' : '24px',
+      logoMarginTop: isSquare ? '16px' : '12px',
+      logoHeight: isSquare ? 48 : 32,
+      optionPadding: isSquare ? '32px 20px' : '20px 16px',
+      dividerMarginTop: isSquare ? '32px' : '20px',
+      dividerMarginBottom: isSquare ? '20px' : '12px',
     };
 
     return (
@@ -27,7 +39,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           backgroundColor: '#0A0A0A',
           display: 'flex',
           flexDirection: 'column',
-          padding: '48px',
+          padding: spacing.padding,
           boxSizing: 'border-box',
           position: 'relative',
           fontFamily: 'PP Monument Extended, system-ui, sans-serif',
@@ -41,7 +53,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
         <div
           style={{
             textAlign: 'center',
-            marginBottom: '32px',
+            marginBottom: spacing.questionMargin,
           }}
         >
           <h1
@@ -69,7 +81,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                 border: '2px solid #7ACFFF',
                 borderRadius: '12px',
                 padding: '20px 24px',
-                marginBottom: '32px',
+                marginBottom: spacing.ticketMargin,
                 display: 'flex',
                 alignItems: 'center',
                 gap: '20px',
@@ -153,15 +165,15 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           style={{
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: isSquare ? '48px' : '32px',
-            marginTop: isSquare ? '16px' : '24px',
+            marginBottom: spacing.logoMarginBottom,
+            marginTop: spacing.logoMarginTop,
           }}
         >
           <img
             src={novigLogoWhite}
             alt="Novig"
             style={{
-              height: `${isSquare ? 48 : 40}px`,
+              height: `${spacing.logoHeight}px`,
               width: 'auto',
             }}
           />
@@ -181,7 +193,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           <div
             style={{
               textAlign: 'center',
-              padding: '32px 20px',
+              padding: spacing.optionPadding,
               backgroundColor: 'rgba(122, 207, 255, 0.1)',
               borderRadius: '16px',
               border: '2px solid rgba(122, 207, 255, 0.3)',
@@ -216,7 +228,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
           <div
             style={{
               textAlign: 'center',
-              padding: '32px 20px',
+              padding: spacing.optionPadding,
               backgroundColor: 'rgba(122, 207, 255, 0.1)',
               borderRadius: '16px',
               border: '2px solid rgba(122, 207, 255, 0.3)',
@@ -257,8 +269,8 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                 width: '100%',
                 height: '1px',
                 background: 'linear-gradient(90deg, transparent, #333333, transparent)',
-                marginTop: '32px',
-                marginBottom: '20px',
+                marginTop: spacing.dividerMarginTop,
+                marginBottom: spacing.dividerMarginBottom,
               }}
             />
 
