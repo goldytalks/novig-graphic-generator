@@ -61,18 +61,20 @@ function App() {
           </div>
 
           {/* RIGHT COLUMN - Preview (50%, Centered) */}
-          <div className="overflow-y-auto bg-white flex flex-col items-center justify-center p-8">
+          <div className="overflow-auto bg-white flex flex-col items-center justify-start p-8">
             {/* Live Preview Badge */}
-            <div className="mb-6">
-              <span className="inline-block bg-sky-blue text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg">
+            <div className="mb-4 flex-shrink-0">
+              <span className="inline-block bg-sky-blue text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
                 Live Preview
               </span>
             </div>
 
-            {/* Preview Container - Centered */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl p-6 border-2 border-sky-blue">
-              <div className="flex justify-center items-center">
-                <GraphicPreview data={marketData} ref={previewRef} />
+            {/* Preview Container - Scaled to fit */}
+            <div className="flex-shrink-0 max-w-full" style={{ maxHeight: 'calc(100vh - 200px)' }}>
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-2xl p-4 border-2 border-sky-blue inline-block">
+                <div style={{ transform: 'scale(0.6)', transformOrigin: 'top center' }}>
+                  <GraphicPreview data={marketData} ref={previewRef} />
+                </div>
               </div>
             </div>
           </div>
