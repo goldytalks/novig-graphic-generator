@@ -22,9 +22,9 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
       padding: isSquare ? '48px' : '32px',
       questionMargin: isSquare ? '32px' : '20px',
       ticketMargin: isSquare ? '32px' : '20px',
-      logoMarginBottom: isSquare ? '48px' : '24px',
+      logoMarginBottom: isSquare ? '48px' : '28px',
       logoMarginTop: isSquare ? '16px' : '12px',
-      logoHeight: isSquare ? 48 : 32,
+      logoHeight: isSquare ? 56 : 40,
       optionPadding: isSquare ? '32px 20px' : '20px 16px',
       dividerMarginTop: isSquare ? '32px' : '20px',
       dividerMarginBottom: isSquare ? '20px' : '12px',
@@ -80,16 +80,20 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                 backgroundColor: 'rgba(122, 207, 255, 0.15)',
                 border: '2px solid #7ACFFF',
                 borderRadius: '12px',
-                padding: '20px 24px',
+                padding: isSquare ? '16px 20px' : '12px 16px',
                 marginBottom: spacing.ticketMargin,
                 display: 'flex',
+                flexDirection: 'column',
                 alignItems: 'center',
-                gap: '20px',
+                justifyContent: 'center',
+                textAlign: 'center',
                 position: 'relative',
+                maxWidth: '80%',
+                margin: `0 auto ${spacing.ticketMargin}`,
               }}
             >
               {/* Player Info */}
-              <div style={{ flex: 1 }}>
+              <div>
                 {data.playerName && (
                   <div
                     style={{
@@ -98,7 +102,7 @@ const BoldTemplate = forwardRef<HTMLDivElement, TemplateProps>(
                       color: '#FFFFFF',
                       textTransform: 'uppercase',
                       letterSpacing: '-0.01em',
-                      marginBottom: '8px',
+                      marginBottom: '6px',
                       fontFamily: 'PP Monument Extended, system-ui, sans-serif',
                     }}
                   >
