@@ -42,37 +42,39 @@ function App() {
           </p>
         </div>
 
-        {/* Main Layout - Side by side: Controls LEFT, Preview RIGHT */}
-        <div className="grid grid-cols-2 gap-12 items-start max-w-[1800px] mx-auto">
-          {/* Controls Section - LEFT SIDE */}
-          <div>
-            <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-              <h2 className="text-3xl font-black text-gray-900 mb-8 uppercase tracking-tight">
+        {/* Main Layout - Two Column: Controls LEFT (fixed 400px), Preview RIGHT (flex-1) */}
+        <div className="grid grid-cols-[400px_1fr] gap-8 h-[calc(100vh-200px)]">
+          {/* LEFT COLUMN - Controls (Fixed 400px, Scrollable) */}
+          <div className="overflow-y-auto pr-4">
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+              <h2 className="text-2xl font-black text-gray-900 mb-6 uppercase tracking-tight">
                 ⚙️ Controls
               </h2>
 
               {/* Market Form */}
               <MarketForm data={marketData} onDataChange={handleDataChange} />
 
-              <div className="mt-8">
+              <div className="mt-6">
                 <DownloadButton elementRef={previewRef} />
               </div>
             </div>
           </div>
 
-          {/* Preview Section - RIGHT SIDE */}
-          <div>
-            {/* Live Preview Badge - Separate */}
-            <div className="mb-4 text-center">
+          {/* RIGHT COLUMN - Preview (Remaining Width, Centered) */}
+          <div className="flex flex-col items-center justify-center">
+            {/* Live Preview Badge */}
+            <div className="mb-6">
               <span className="inline-block bg-sky-blue text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg">
                 Live Preview
               </span>
             </div>
 
-            {/* Preview Box - Floating */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-2xl p-8 border-2 border-sky-blue">
-              <div className="flex justify-center">
-                <GraphicPreview data={marketData} ref={previewRef} />
+            {/* Preview Container - Centered */}
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl p-8 border-2 border-sky-blue max-w-full">
+              <div className="flex justify-center items-center">
+                <div style={{ maxWidth: '100%' }}>
+                  <GraphicPreview data={marketData} ref={previewRef} />
+                </div>
               </div>
             </div>
           </div>
