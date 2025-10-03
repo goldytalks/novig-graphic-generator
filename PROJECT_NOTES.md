@@ -1,8 +1,8 @@
 # NOVIG GRAPHIC GENERATOR - PROJECT NOTES
 
-> Last Updated: October 1, 2025
-> Status: ✅ PRODUCTION READY - All Features Complete, Git Initialized
-> Version: 1.3.0 - Ready for Vercel Deployment
+> Last Updated: October 3, 2025
+> Status: ✅ LIVE IN PRODUCTION - Deployed and Running
+> Version: 1.4.0 - Live on Vercel + GitHub
 
 ---
 
@@ -414,6 +414,14 @@ Light Text:          #FFFFFF
 ---
 
 ## 📈 VERSION HISTORY
+
+### v1.4.0 - October 3, 2025
+- **PRODUCTION DEPLOYMENT**: Successfully deployed to Vercel
+- **LAYOUT FIXES**: Moved Novig logo to centered position between ticket and options
+- **CORNER CLEANUP**: Sport icon only in corner (no overlapping logo)
+- **WIDE FORMAT FIX**: Adjusted all font sizes for 1.91:1 aspect ratio
+- **TEMPLATE SIMPLIFICATION**: Hidden Gradient template, Bold + Minimal only
+- **GIT REPOSITORY**: Live on GitHub with proper commit history
 
 ### v1.3.0 - October 1, 2025
 - **BRAND CORRECTION**: Fixed to use correct Sky Blue (#7ACFFF) from brand guidelines
