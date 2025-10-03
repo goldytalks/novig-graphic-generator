@@ -31,22 +31,22 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-4 py-8">
+      <div className="h-screen flex flex-col">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-2 tracking-tight">
+        <div className="text-center py-6 bg-white border-b border-gray-200">
+          <h1 className="text-4xl font-bold text-gray-900 mb-1 tracking-tight">
             Novig Graphic Generator
           </h1>
-          <p className="text-gray-600 font-medium">
+          <p className="text-gray-600 font-medium text-sm">
             Create branded betting market graphics in seconds
           </p>
         </div>
 
-        {/* Main Layout - Two Column: Controls LEFT (fixed 400px), Preview RIGHT (flex-1) */}
-        <div className="grid grid-cols-[400px_1fr] gap-8 h-[calc(100vh-200px)]">
-          {/* LEFT COLUMN - Controls (Fixed 400px, Scrollable) */}
-          <div className="overflow-y-auto pr-4">
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+        {/* Main Layout - Two Column: Controls LEFT, Preview RIGHT */}
+        <div className="flex-1 grid grid-cols-2 overflow-hidden">
+          {/* LEFT COLUMN - Controls (50%, Scrollable) */}
+          <div className="overflow-y-auto bg-gray-50 border-r border-gray-200 p-6">
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
               <h2 className="text-2xl font-black text-gray-900 mb-6 uppercase tracking-tight">
                 ⚙️ Controls
               </h2>
@@ -60,8 +60,8 @@ function App() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Preview (Remaining Width, Centered) */}
-          <div className="flex flex-col items-center justify-center">
+          {/* RIGHT COLUMN - Preview (50%, Centered) */}
+          <div className="overflow-y-auto bg-white flex flex-col items-center justify-center p-8">
             {/* Live Preview Badge */}
             <div className="mb-6">
               <span className="inline-block bg-sky-blue text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg">
@@ -70,22 +70,14 @@ function App() {
             </div>
 
             {/* Preview Container - Centered */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl p-8 border-2 border-sky-blue max-w-full">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl p-6 border-2 border-sky-blue">
               <div className="flex justify-center items-center">
-                <div style={{ maxWidth: '100%' }}>
-                  <GraphicPreview data={marketData} ref={previewRef} />
-                </div>
+                <GraphicPreview data={marketData} ref={previewRef} />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="mt-12 text-center text-sm text-gray-500">
-          <p className="font-medium">
-            Built for Novig • High-quality exports • Optimized for social media
-          </p>
-        </div>
       </div>
     </div>
   );
