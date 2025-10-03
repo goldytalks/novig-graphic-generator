@@ -43,7 +43,7 @@ function App() {
         </div>
 
         {/* Main Layout - Side by side: Controls LEFT, Preview RIGHT */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-2 gap-6 items-start max-w-[1800px] mx-auto">
           {/* Controls Section - LEFT SIDE (BIGGER) */}
           <div>
             <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-200">
